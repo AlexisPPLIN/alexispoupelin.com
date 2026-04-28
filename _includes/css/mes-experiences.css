@@ -1,0 +1,17 @@
+article header{
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container:has(#index) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
