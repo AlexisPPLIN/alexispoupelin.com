@@ -6,11 +6,24 @@ article header{
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+}
+
+header {
+    min-height: 15vh;
+}
+
+main {
+    min-height: 85vh;
+}
+
+footer {
+    padding: 25px;
+    border-top: dashed var(--pico-h3-color) 5px;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 .container:has(#index) {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
