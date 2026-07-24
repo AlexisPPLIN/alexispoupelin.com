@@ -172,3 +172,33 @@
     padding: 1rem;
   }
 }
+
+/* === Contributions Open Source === */
+
+section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+article header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+article header a {
+  font-weight: 600;
+  color: var(--pico-primary);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+article header a:hover {
+  text-decoration: underline;
+}
+
+article p {
+  margin: 0;
+  line-height: 1.5;
+}
