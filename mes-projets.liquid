@@ -7,7 +7,8 @@ layout: layout.liquid
   <hgroup class="experience-header">
     <h1># Mes projets</h1>
     <p>
-      Quelques projets que j'ai codés pour le plaisir (ou par nécessité). Ouverts, documentés, utilisables par la communauté.
+      Quelques projets que j'ai codés pour le plaisir (ou par nécessité). Ouverts, documentés, utilisables par la
+      communauté.
     </p>
   </hgroup>
 
@@ -176,6 +177,79 @@ layout: layout.liquid
       <a href="https://github.com/AlexisPPLIN" target="_blank" rel="noopener" class="button">
         Voir tous mes projets sur GitHub →
       </a>
+    </div>
+  </section>
+
+  <!-- Section Homelab -->
+  <section style="margin-top: 5rem;">
+    <h3>Homelab</h3>
+    <p style="color: var(--pico-muted-color); margin-bottom: 1.5rem;">
+      Mon labo perso : cluster Proxmox en haute disponibilité, TrueNAS pour le stockage, VMs et LXC.
+      Parce qu'apprendre l'infra c'est aussi se taper ses propres pannes.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+      <!-- Cluster & HA -->
+      <article>
+        <header>
+          <strong>Cluster Proxmox HA</strong>
+        </header>
+        <p style="font-size: 0.9rem; color: var(--pico-muted-color);">
+          Plusieurs nœuds Proxmox avec basculement automatique. Si un serveur crashe, les VMs restartent sur un autre.
+        </p>
+        <div class="timeline-tech" style="margin-top: 0.75rem;">
+          <kbd>Proxmox VE</kbd>
+          <kbd>HA Cluster</kbd>
+          <kbd>Ceph</kbd>
+        </div>
+      </article>
+
+      <!-- Storage -->
+      <article>
+        <header>
+          <strong>Stockage Centralisé</strong>
+        </header>
+        <p style="font-size: 0.9rem; color: var(--pico-muted-color);">
+          TrueNAS en backend pour les données partagées. ZFS snapshots, replication, checksums.
+        </p>
+        <div class="timeline-tech" style="margin-top: 0.75rem;">
+          <kbd>TrueNAS</kbd>
+          <kbd>ZFS</kbd>
+          <kbd>NFS/iSCSI</kbd>
+        </div>
+      </article>
+
+      <!-- VMs & Conteneurs -->
+      <article>
+        <header>
+          <strong>VMs Debian & LXC</strong>
+        </header>
+        <p style="font-size: 0.9rem; color: var(--pico-muted-color);">
+          Machines virtuelles Debian pour les services lourds, conteneurs LXC pour les légers (DNS, monitoring,
+          scripts).
+        </p>
+        <div class="timeline-tech" style="margin-top: 0.75rem;">
+          <kbd>Debian</kbd>
+          <kbd>LXC</kbd>
+          <kbd>Bind/Unbound</kbd>
+        </div>
+      </article>
+
+      <!-- Backup -->
+      <article>
+        <header>
+          <strong>Backup & Replication</strong>
+          <span style="float: right; font-size: 0.8rem;">🔄 24/7</span>
+        </header>
+        <p style="font-size: 0.9rem; color: var(--pico-muted-color);">
+          Snapshot automatiques + replication vers un site distant. Rule 3-2-1 appliquée.
+        </p>
+        <div class="timeline-tech" style="margin-top: 0.75rem;">
+          <kbd>Proxmox Backup</kbd>
+          <kbd>Rsync</kbd>
+          <kbd>Offsite</kbd>
+        </div>
+      </article>
     </div>
   </section>
 </div>
