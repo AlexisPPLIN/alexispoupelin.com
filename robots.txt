@@ -1,0 +1,4 @@
+Sitemap: https://alexispoupelin.com/sitemap.xml
+
+User-agent: *
+Disallow:

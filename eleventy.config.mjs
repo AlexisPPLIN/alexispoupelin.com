@@ -20,4 +20,9 @@ export default function(eleventyConfig) {
 
 		return `/* [buildawesome] cssmin skipped during --watch and --serve */\n${inputCode}`;
 	});
+
+	eleventyConfig.addFilter("isSitemapEligible", (url) => {
+		const excluded = [".css", ".js", ".json", ".txt"];
+		return !excluded.some(ext => url.endsWith(ext));
+	});
 };
