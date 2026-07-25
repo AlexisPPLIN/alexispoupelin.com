@@ -1,74 +1,110 @@
 ---
 layout: layout.liquid
 ---
+<link rel="stylesheet" href="/bundle.css">
 
-<hgroup>
+<div class="pipeline-container">
+  <hgroup class="pipeline-header">
     <h1># Mes compétences</h1>
-    <br>
     <p>
-        Je ne me contente pas de développer : je construis des systèmes résilients.<br><br>
-        En maîtrisant l'ensemble de la stack (du Frontend à l'Infra), je supprime les silos entre les équipes et les technologies pour garantir des livraisons fiables et pérennes.
+      Je ne me contente pas de développer : je construis des systèmes résilients.<br><br>
+      En maîtrisant l'ensemble de la stack (du Frontend à l'Infra), je supprime les silos
+      entre les équipes et les technologies pour garantir des livraisons fiables et pérennes.
     </p>
-</hgroup>
+  </hgroup>
 
-<hr />
+  <hr />
 
-<h3>## Gestion de projet</h3>
-<p>
-    <kbd>Git</kbd>
-    <kbd>Gitlab</kbd>
-    <br>
-    <blockquote>
-        De la spécification au déploiement, je fais le lien entre besoins métiers et réalité technique.<br><br>
-        Je coordonne les équipes et arbitre les compromis pour livrer des projets fonctionnels, sécurisés et dans les temps.
-    </blockquote>
-</p>
+  <div class="pipeline">
+  <!-- Étape 1 : Gestion de projet -->
+  <div class="pipeline-stage">
+    <div class="stage-icon">①</div>
+    <div class="stage-content">
+      <h3 class="stage-title">Gestion de projet</h3>
+      <div class="stage-tech">
+        <kbd>Git</kbd>
+        <kbd>Gitlab</kbd>
+      </div>
+      <p class="stage-description">
+        Je traduis les besoins métiers en spécifications techniques claires.
+        Coordination d'équipe, planning, arbitrages—je m'assure que le produit
+        correspond aux attentes sans exploiter l'équipe.
+      </p>
+    </div>
+  </div>
 
-<h3>## Développement</h3>
-<p>
-    <kbd>PHP (Symfony)</kbd>
-    <kbd>HTML</kbd>
-    <kbd>CSS</kbd>
-    <kbd>JS</kbd>
-    <br>
-    <blockquote>
-        Je m'adapte à n'importe quel environnement technique pour résoudre des problèmes complexes.<br><br>
-        Je navigue naturellement entre les couches logicielles et choisis les outils les plus pertinents pour le contexte, en gardant toujours en tête la sécurité et la pérennité du code.
-    </blockquote>
-</p>
+  <!-- Étape 2 : Développement -->
+  <div class="pipeline-stage">
+    <div class="stage-icon">②</div>
+    <div class="stage-content">
+      <h3 class="stage-title">Développement</h3>
+      <div class="stage-tech">
+        <kbd>PHP (Symfony)</kbd>
+        <kbd>HTML</kbd>
+        <kbd>CSS</kbd>
+        <kbd>JS</kbd>
+      </div>
+      <p class="stage-description">
+        Du frontend à l'API backend, j'écris du code maintenable et documenté.
+        Je n'invente pas de solutions complexes quand une simple suffit—la
+        pérennité prime sur la technicité.
+      </p>
+    </div>
+  </div>
 
-<h3>## Tests</h3>
-<p>
-    <kbd>Codeception</kbd>
-    <kbd>Gitlab CI/CD</kbd>
-    <kbd>Selenium</kbd>
-    <blockquote>
-        Je considère les tests comme une partie intégrante du développement, pas une étape finale.<br><br>
-        Je mets en place des stratégies de test adaptées (unitaires, d'intégration, E2E) pour valider la fiabilité des fonctionnalités avant le déploiement.<br><br>
-        Mon objectif est de détecter les régressions tôt et de garantir une expérience utilisateur stable, même lors des mises à jour fréquentes.
-    </blockquote>
-</p>
+  <!-- Étape 3 : Tests -->
+  <div class="pipeline-stage">
+    <div class="stage-icon">③</div>
+    <div class="stage-content">
+      <h3 class="stage-title">Tests</h3>
+      <div class="stage-tech">
+        <kbd>Codeception</kbd>
+        <kbd>Gitlab CI/CD</kbd>
+        <kbd>Selenium</kbd>
+      </div>
+      <p class="stage-description">
+        Pas de feature sans tests : unitaires pour la logique, E2E pour les
+        parcours critiques. Si ça casse en production, c'est moi qui dois
+        pouvoir comprendre pourquoi en 5 minutes.
+      </p>
+    </div>
+  </div>
 
-<h3>## Déploiement (cloud et on-premise)</h3>
-<p>
-    <kbd>Proxmox</kbd>
-    <kbd>Debian</kbd>
-    <kbd>Ansible</kbd>
-    <kbd>Docker</kbd>
-    <kbd>Kubernetes</kbd>
-    <blockquote>
-        Je gère le déploiement d'applications aussi bien dans le cloud que sur des infrastructures locales (on-premise).<br><br>
-        Je conçois des pipelines d'intégration et de livraison continues (CI/CD) pour automatiser les mises en production, garantir la reproductibilité des environnements et assurer une haute disponibilité, quel que soit l'hébergement choisi.
-    </blockquote>
-</p>
+  <!-- Étape 4 : Déploiement -->
+  <div class="pipeline-stage">
+    <div class="stage-icon">④</div>
+    <div class="stage-content">
+      <h3 class="stage-title">Déploiement</h3>
+      <div class="stage-tech">
+        <kbd>Proxmox</kbd>
+        <kbd>Debian</kbd>
+        <kbd>Ansible</kbd>
+        <kbd>Docker</kbd>
+        <kbd>Kubernetes</kbd>
+      </div>
+      <p class="stage-description">
+        Infrastructure reproducible, pas de "ça marche sur ma machine". Cloud
+        ou on-premise, l'important est que le déploiement soit prévisible et
+        qu'on puisse rollback rapidement si besoin.
+      </p>
+    </div>
+  </div>
 
-<h3>## Monitoring / Observabilité</h3>
-<p>
-    <kbd>Grafana</kbd>
-    <kbd>OpenTelemetry</kbd>
-    <blockquote>
-        Je mets en place des systèmes de surveillance pour détecter les anomalies avant qu'elles n'impactent les utilisateurs.<br><br>
-        Au-delà de la collecte de métriques et de logs, j'analyse les données pour identifier les goulots d'étranglement et prévenir les pannes.<br><br>
-        L'objectif est de maintenir la stabilité du service et de réduire le temps de résolution des incidents.
-    </blockquote>
-</p>
+  <!-- Étape 5 : Monitoring -->
+  <div class="pipeline-stage">
+    <div class="stage-icon">⑤</div>
+    <div class="stage-content">
+      <h3 class="stage-title">Monitoring / Observabilité</h3>
+      <div class="stage-tech">
+        <kbd>Grafana</kbd>
+        <kbd>OpenTelemetry</kbd>
+      </div>
+      <p class="stage-description">
+        Métriques, logs, traces—tout est instrumenté pour savoir ce qui se passe
+        en prod. Alertes pertinentes (pas de spam), dashboards actionables.
+        Mieux vaut voir une alerte la nuit que recevoir un appel client.
+      </p>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,189 @@
+/* === Pipeline CI/CD - Mes Compétences === */
+
+.pipeline-container {
+  margin: 3rem 0;
+}
+
+.pipeline-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.pipeline-header > p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--pico-muted-color);
+  line-height: 1.6;
+}
+
+/* Pipeline horizontal (desktop) */
+.pipeline {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  position: relative;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.pipeline-stage {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+/* Connecteurs entre les étapes */
+.pipeline-stage:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 3rem;
+  right: -16px;
+  width: 32px;
+  height: 2px;
+  background: var(--pico-primary);
+  z-index: 0;
+}
+
+.pipeline-stage:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 2.75rem;
+  right: -20px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--pico-primary);
+  border-right: 2px solid var(--pico-primary);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+/* Icône / numéro d'étape */
+.stage-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--pico-primary);
+  color: var(--pico-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pipeline-stage:hover .stage-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 6px var(--pico-primary-focus);
+}
+
+.stage-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--pico-primary);
+}
+
+/* Badges technologiques */
+.stage-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.stage-tech kbd {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+
+/* Description de l'étape */
+.stage-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--pico-muted-color);
+  max-width: 220px;
+}
+
+/* Responsive : empilement vertical sur mobile */
+@media (max-width: 768px) {
+  .pipeline {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .pipeline-stage {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    min-width: 100%;
+  }
+
+  /* Connecteur vertical sur mobile */
+  .pipeline-stage:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    left: 31px;
+    bottom: -10px;
+    width: 2px;
+    height: 20px;
+  }
+
+  .pipeline-stage:not(:last-child)::before {
+    display: none;
+  }
+
+  .stage-content {
+    flex: 1;
+  }
+
+  .stage-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .stage-tech,
+  .stage-description {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .stage-description {
+    max-width: 100%;
+  }
+}
+
+/* Animation d'apparition progressive */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pipeline-stage {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.pipeline-stage:nth-child(1) { animation-delay: 0.1s; }
+.pipeline-stage:nth-child(2) { animation-delay: 0.25s; }
+.pipeline-stage:nth-child(3) { animation-delay: 0.4s; }
+.pipeline-stage:nth-child(4) { animation-delay: 0.55s; }
+.pipeline-stage:nth-child(5) { animation-delay: 0.7s; }

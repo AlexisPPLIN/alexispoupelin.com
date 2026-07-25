@@ -5,6 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="color-scheme" content="light dark">
 
+        <script>
+            // Appliquer immédiatement le thème sauvegardé (avant paint)
+            (function () {
+            const theme = localStorage.getItem('theme');
+            if (theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            document.documentElement.classList.add('no-transitions');
+            })();
+        </script>
+
         <link rel="stylesheet" href="/bundle.css">
 
         <!-- Favicon -->
@@ -37,6 +48,14 @@
                 <ul>
                     <li><a href="/mes-competences" class="secondary">Compétences</a></li>
                     <li><a href="/mes-experiences" class="secondary">Expériences</a></li>
+                    <li><a href="/mes-projets" class="secondary">Projets</a></li>
+                    <li>
+                        <button class="theme-switcher" id="theme-toggle" aria-label="Basculer le thème" title="Changer de thème">
+                            <span class="icon icon-light">☀️</span>
+                            <span class="icon icon-dark">🌙</span>
+                            <span class="label">Thème</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -47,4 +66,5 @@
             <a href="/mentions-legales">Mentions légales</a>
         </footer>
     </body>
+    <script src="/bundle.js"></script>
 </html>

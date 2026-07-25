@@ -1,0 +1,91 @@
+/* === Theme Switcher === */
+
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  background: none;
+  border: 2px solid var(--pico-muted-border-color);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  color: var(--pico-muted-color);
+  transition: border-color 0.2s ease, color 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.theme-switcher:hover {
+  border-color: var(--pico-primary);
+  color: var(--pico-primary);
+}
+
+.theme-switcher:focus-visible {
+  outline: 2px solid var(--pico-primary-focus);
+  outline-offset: 2px;
+}
+
+.theme-switcher .icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Transitions globales pour le changement de thème */
+html,
+body,
+*,
+*:before,
+*:after {
+  transition-property: 
+    background-color,
+    border-color,
+    color,
+    fill,
+    stroke,
+    box-shadow,
+    caret-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Limite la transition aux éléments concernés (performance) */
+body {
+  transition: 
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+a,
+button,
+kbd,
+.stage-tech kbd,
+h1, h2, h3, h4, h5, h6,
+p,
+blockquote,
+article,
+section {
+  transition: 
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+/* Évite les animations indésirables sur les images et vidéos */
+img,
+video,
+svg {
+  transition: none;
+}
+
+/* Masquer l'icône opposée selon le thème actif */
+[data-theme="light"] .theme-switcher .icon-dark,
+[data-theme="dark"] .theme-switcher .icon-light {
+  display: none;
+}
+
+/* Si pas de data-theme (auto/système), on montre les deux */
+.theme-switcher .icon-auto {
+  display: none;
+}

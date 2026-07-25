@@ -1,55 +1,150 @@
 ---
 layout: layout.liquid
 ---
+<link rel="stylesheet" href="/bundle.css">
 
-<hgroup>
-  <h1># Mes expériences professionnelles</h1>
-  <p></p>
-</hgroup>
-
-<hr />
-
-<div class="grid">
-  <article>
-    <header>
-      <div>
-        <b>Développeur Principal & Lead Tech | Full Stack, DevOps, SRE & Sécurité</b>
-        <br>
-        <small>Vitis-in-situ - <a href="https://fr.jardins-animes.com" target="_blank">fr.jardins-animes.com</a></small>
-      </div>
-      <div>
-        Octobre 2021 - Aujourd'hui
-      </div>
-    </header>
+<div class="experience-container">
+  <hgroup class="experience-header">
+    <h1># Mes expériences professionnelles</h1>
     <p>
-      En tant que responsable technique, je pilote l'ensemble du cycle de vie numérique de l'entreprise, de la conception stratégique au déploiement opérationnel.<br>
-      Je garantis la performance, la fiabilité et la sécurité de notre plateforme e-commerce (fr.jardins-animes.com) et de nos outils internes, en assurant l'alignement entre les objectifs métiers et les solutions techniques.<br>
-      <br>
-      Mes responsabilités clés :<br>
-      <br>
-      🚀 Gestion de Projet & Coordination Pilotage du cycle de vie des projets, traduction des besoins métiers en spécifications techniques et facilitation de la communication entre les équipes techniques et les parties prenantes.<br>
-      <br>
-      💻 Développement Full Stack<br>
-      • Frontend : Interfaces réactives avec HTML5, CSS3, JavaScript<br>
-      • Backend : Architecture eCommerce robuste avec PHP et Symfony<br>
-      <br>
-      ⚙️ DevOps & CI/CD Automatisation des pipelines de déploiement et gestion du cycle de vie via GitLab, assurant intégration et livraison continues fiables.<br>
-      <br>
-      ☁️ Infrastructure & Orchestration Administration virtualisée (Proxmox) et orchestration de conteneurs avec Kubernetes pour une haute disponibilité et une scalabilité optimale.<br>
-      <br>
-      📊 Observabilité & Monitoring Surveillance proactive des performances et stabilité via Grafana (métriques) et Sentry (suivi d'erreurs temps réel).<br>
-      <br>
-      🔒 Cybersécurité Sécurisation de la stack (code, infra, données) via hardening, audit de code et gestion des vulnérabilités.<br>
-      <br>
-      Stack Technique :<br>
-      • Frontend : HTML5, CSS3, JavaScript<br>
-      • Backend : PHP, Symfony<br>
-      • DevOps : GitLab CI/CD, Docker, Kubernetes<br>
-      • Infra : Proxmox VE, Linux<br>
-      • Monitoring : Grafana, Prometheus, Sentry<br>
-      • Sécurité : Hardening, Audit, Gestion des accès<br>
-      <br>
-      Compétences Transverses : Gestion de projet agile, communication inter-services, mentorat technique et prise de décision stratégique.
+      Du stage en 2019 à la responsabilité technique aujourd'hui,
+      j'ai construit mon expérience en travaillant sur des projets variés.
     </p>
-  </article>
+  </hgroup>
+
+  <hr />
+
+  <div class="timeline">
+    <!-- Expérience actuelle -->
+    <div class="timeline-item">
+      <div class="timeline-marker current"></div>
+      <div class="timeline-content">
+        <h3 class="timeline-title">
+          Développeur Fullstack
+          <span class="badge-current">Actuel</span>
+        </h3>
+        <p class="timeline-period">Vitis-in-situ (<a href="https://fr.jardins-animes.com">jardins-animes.com</a>)|
+          Depuis 2021</p>
+
+
+        <p>
+          Je pilote l'ensemble du cycle de vie numérique : conception stratégique,
+          développement, déploiement, monitoring. Alignement permanent entre objectifs
+          métiers et solutions techniques.
+        </p>
+
+        <ul class="timeline-responsabilities">
+          <li><strong>Gestion de projet :</strong> Traduction des besoins métiers en specs techniques, coordination
+            d'équipe.</li>
+          <li><strong>Frontend :</strong> Interfaces réactives (HTML5, CSS3, JavaScript).</li>
+          <li><strong>Backend :</strong> Architecture e-commerce robuste avec PHP et Symfony.</li>
+          <li><strong>DevOps :</strong> Pipelines GitLab CI/CD fiables. Rollback en 2 minutes.</li>
+          <li><strong>Infrastructure :</strong> Virtualisation Proxmox, orchestration Kubernetes.</li>
+          <li><strong>Monitoring :</strong> Grafana + Sentry. Alertes actionables, pas de spam.</li>
+          <li><strong>Sécurité :</strong> Hardening, audit de code, gestion des vulnérabilités.</li>
+        </ul>
+
+        <div class="timeline-tech">
+          <kbd>HTML5</kbd>
+          <kbd>CSS3</kbd>
+          <kbd>JavaScript</kbd>
+          <kbd>PHP</kbd>
+          <kbd>Symfony</kbd>
+          <kbd>GitLab CI/CD</kbd>
+          <kbd>Docker</kbd>
+          <kbd>Kubernetes</kbd>
+          <kbd>Proxmox VE</kbd>
+          <kbd>Linux</kbd>
+          <kbd>Grafana</kbd>
+          <kbd>Prometheus</kbd>
+          <kbd>Sentry</kbd>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fleury Michon -->
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3 class="timeline-title">Technicien Développeur (Alternance)</h3>
+        <p class="timeline-period">Fleury Michon | Sept 2019 - Sept 2021</p>
+
+        <p>
+          En alternance au sein de la DSI Gestion, maintenance et évolution de logiciels internes.
+          Premier contact concret avec la production industrielle et les enjeux de fiabilité.
+        </p>
+
+        <ul class="timeline-responsabilities">
+          <li>Maintenance corrective et évolutive de logiciels métiers internes</li>
+          <li>Améliorations de fonctionnalités existantes selon les retours utilisateurs</li>
+          <li>Décommissionnement d'anciens outils de Business Intelligence</li>
+          <li>Documentation technique et transmission des connaissances</li>
+        </ul>
+
+        <div class="timeline-tech">
+          <kbd>PHP</kbd>
+          <kbd>Laravel</kbd>
+          <kbd>SQL</kbd>
+          <kbd>T-SQL</kbd>
+          <kbd>PLSQL</kbd>
+          <kbd>Windows</kbd>
+          <kbd>Debian</kbd>
+          <kbd>Git</kbd>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bodet Sport -->
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3 class="timeline-title">Stagiaire Développeur Web</h3>
+        <p class="timeline-period">Bodet Sport | Juil 2019 - Sept 2019</p>
+
+        <p>
+          Premier stage technique. Conception et développement d'un site web serverless
+          pour gérer la création, modification et suppression d'équipes du produit Score Pad.
+        </p>
+
+        <ul class="timeline-responsabilities">
+          <li>Conception de l'architecture serverless du site</li>
+          <li>Développement front-end et back-end</li>
+          <li>Implémentation des fonctionnalités CRUD pour les équipes</li>
+          <li>Tests et validation avec l'équipe produit</li>
+        </ul>
+
+        <div class="timeline-tech">
+          <kbd>JavaScript</kbd>
+          <kbd>HTML</kbd>
+          <kbd>CSS</kbd>
+          <kbd>Nuxt.js</kbd>
+          <kbd>Bootstrap</kbd>
+          <kbd>Tailwind</kbd>
+          <kbd>Serverless</kbd>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compétences transverses -->
+  <section style="margin-top: 4rem;">
+    <h3>Compétences transverses</h3>
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+      <article>
+        <header><strong>Méthodes Agiles</strong></header>
+        <p style="font-size: 0.9rem; color: var(--pico-muted-color);">SCRUM, planning, retros</p>
+      </article>
+      <article>
+        <header><strong>Anglais</strong></header>
+        <p style="font-size: 0.9rem; color: var(--pico-muted-color);">B2 - je lis de la doc technique et je peux tenir
+          une conversation pro.</p>
+      </article>
+      <article>
+        <header><strong>Mentorat</strong></header>
+        <p style="font-size: 0.9rem; color: var(--pico-muted-color);">Code reviews, pairing, partage de bonnes pratiques
+          pour monter l'équipe.</p>
+      </article>
+    </div>
+  </section>
 </div>

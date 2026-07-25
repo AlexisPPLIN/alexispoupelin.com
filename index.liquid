@@ -2,17 +2,158 @@
 layout: layout.liquid
 ---
 
-<div id="index">
-  <hgroup style="text-align: center;">
-    <h1>Alexis POUPELIN</h1>
-    <p>Lead Tech | Full Stack, DevOps, SRE & Sécurité</p>
-  </hgroup>
+<!-- Hero Section - Split Screen -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Alexis POUPELIN</h1>
+    <p class="hero-role">Lead Tech | Full Stack · DevOps · SRE · Sécurité</p>
 
-  <p style="text-align: center;">
-      <a href="https://github.com/AlexisPPLIN"><kbd>Github</kbd></a>
-      <a href="https://www.linkedin.com/in/alexispoupelin"><kbd>Linkedin</kbd></a>
-      <a href="mailto:contact@alexispoupelin.com"><kbd>Email</kbd></a>
-  </p>
-</div>
+    <p class="hero-subtitle">
+      Je construis des systèmes résilients, du code maintenable et des infra fiables.
+      De la spécification métier au déploiement en production, je prends la pleine responsabilité technique.
+    </p>
 
+    <div class="hero-tags">
+      <kbd>PHP / Symfony</kbd>
+      <kbd>Docker / Kubernetes</kbd>
+      <kbd>Proxmox</kbd>
+      <kbd>GitLab CI/CD</kbd>
+      <kbd>Grafana</kbd>
+    </div>
 
+    <div class="hero-buttons">
+      <a href="/mes-competences" class="button">
+        Mes compétences
+      </a>
+      <a href="/mes-experiences" class="button">
+        Mon parcours
+      </a>
+      <a href="/mes-projets" class="button">
+        Mes projets
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img src="./_includes/img/alexis.jpg" alt="Illustration Alexis Poupelin" style="border-radius: 100%">
+  </div>
+</section>
+
+<!-- Quick Stats - Modern Dashboard -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <!-- Années d'expérience -->
+    <div class="stat-card-modern" data-percentage="100">
+      <div class="stat-icon-wrapper">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+        </svg>
+      </div>
+      <div class="stat-value-modern">5+</div>
+      <div class="stat-label-modern">Années d'expérience</div>
+      <div class="stat-progress-container">
+        <div class="stat-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Stacks maîtrisées -->
+    <div class="stat-card-modern" data-percentage="100">
+      <div class="stat-icon-wrapper">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M4 6H2V20C2 21.1 2.9 22 4 22H20C21.1 22 22 21.1 22 20V6H4V6ZM20 2H4C2.9 2 2 2.9 2 4V4H22V4C22 2.9 21.1 2 20 2ZM18 14H6V12H18V14ZM18 18H6V16H18V18ZM18 10H6V8H18V10Z" />
+        </svg>
+      </div>
+      <div class="stat-value-modern">3</div>
+      <div class="stat-label-modern">Stacks maîtrisées</div>
+      <div class="stat-progress-container">
+        <div class="stat-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Data perdue -->
+    <div class="stat-card-modern" data-percentage="100">
+      <div class="stat-icon-wrapper">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM11 16.5L6.5 12L7.91 10.59L11 13.67L16.59 8.09L18 9.5L11 16.5Z" />
+        </svg>
+      </div>
+      <div class="stat-value-modern">Trop</div>
+      <div class="stat-label-modern">De café en 2026</div>
+      <div class="stat-progress-container">
+        <div class="stat-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="/mes-competences/" class="button secondary">
+      Voir mes compétences →
+    </a>
+  </div>
+</section>
+
+<!-- Projects Preview -->
+<section class="projects-preview">
+  <h2>Derniers projets</h2>
+  <div class="project-grid">
+    <article class="project-card">
+      <header>
+        <a href="/mes-projets/#projets-personnels">Projets personnels</a>
+      </header>
+      <p>
+        Quand je ne travaille pas sur des projets pro, je continue à coder pour apprendre et partager.
+      </p>
+    </article>
+
+    <article class="project-card">
+      <header>
+        <a href="/mes-projets/#contributions-open-source">Contributions Open Source</a>
+      </header>
+      <p>
+        Je contribue régulièrement à des projets open source : correctifs, features, doc.
+      </p>
+    </article>
+
+    <article class="project-card">
+      <header>
+        <a href="/mes-projets/#homelab">Homelab</a>
+      </header>
+      <p>
+        Mon labo perso : cluster Proxmox en haute disponibilité, TrueNAS pour le stockage, VMs et LXC. Parce qu'apprendre l'infra c'est aussi se taper ses propres pannes.
+      </p>
+    </article>
+  </div>
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="/mes-projets/" class="button secondary">
+      Voir tous les projets →
+    </a>
+  </div>
+</section>
+
+<section class="cta-footer">
+  <div class="cta-wrapper-modern">
+    <div class="cta-icon-wrapper">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+      </svg>
+    </div>
+    
+    <h2>Mon profil vous intéresse ?</h2>
+    <p>
+      Contactez moi
+    </p>
+    
+    <div class="cta-button-group">
+      <a href="mailto:contact@alexispoupelin.com" class="button contrast">
+        Email
+      </a>
+      <a href="https://linkedin.com/in/alexispoupelin" target="_blank" rel="noopener" class="button secondary">
+        LinkedIn ↗
+      </a>
+      <a href="https://github.com/AlexisPPLIN" target="_blank" rel="noopener" class="button secondary">
+        Github ↗
+      </a>
+    </div>
+  </div>
+</section>
