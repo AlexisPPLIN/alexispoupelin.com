@@ -1,6 +1,8 @@
 ---
 permalink: bundle.css
 ---
+
+{% set css %}
 {% include "./node_modules/@picocss/pico/css/pico.sand.min.css" %}
 {% include "./node_modules/@picocss/pico/css/pico.colors.min.css" %}
 {% include "./_includes/css/footer.css" %}
@@ -8,3 +10,6 @@ permalink: bundle.css
 {% include "./_includes/css/mes-competences.css" %}
 {% include "./_includes/css/theme-switcher.css" %}
 {% include "./_includes/css/index.css" %}
+{% endset %}
+
+{{ css | cssmin | safe }}
