@@ -113,10 +113,6 @@
   flex-wrap: wrap;
 }
 
-.hero-buttons .button {
-  min-width: 160px;
-}
-
 /* === Quick Stats Section - Modern Dashboard === */
 .stats-section {
   padding: 4rem 1.5rem;

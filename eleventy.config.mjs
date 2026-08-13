@@ -6,6 +6,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("bundle.css");
     eleventyConfig.addPassthroughCopy("bundle.js");
     eleventyConfig.addPassthroughCopy({ "_includes/img/favicon": "/" });
+	eleventyConfig.addPassthroughCopy("assets");
 
     eleventyConfig.addFilter("cssmin", function (inputCode) {
 		if (process.env.ELEVENTY_RUN_MODE === "build") {
