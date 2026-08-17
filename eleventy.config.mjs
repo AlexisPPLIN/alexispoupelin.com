@@ -1,9 +1,11 @@
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { transform } from "lightningcss";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss"
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 
 export default function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom", // or "rss", "json"
 		outputPath: "/feed.xml",
@@ -75,5 +77,10 @@ export default function(eleventyConfig) {
 			return cats.includes(cat);
 		});
 		return result;
+	});
+
+	const french = new Intl.DateTimeFormat("fr");
+	eleventyConfig.addFilter("niceDate", function(d) {
+		return french.format(d);
 	});
 };
