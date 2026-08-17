@@ -28,7 +28,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"sissel.shopify-liquid"
+				"sissel.shopify-liquid",
+				"mhutchie.git-graph"
 			]
 		}
 	}
