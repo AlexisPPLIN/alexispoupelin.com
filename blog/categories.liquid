@@ -7,12 +7,27 @@ pagination:
 permalink: "/blog/categories/{{ category | slugify }}/index.html"
 ---
 
-<h2>Category: {{ category }}</h2>
+<h1>Articles dans la catégorie : {{ category }}</h1>
 
 {% assign posts = collections.post | filterByCategory: category %}
 {% for post in posts reversed %}
-<p>
-<a href="{{post.url}}">{{ post.data.title }}</a> - {{ post.date }}<br/>
-{% excerpt post %}
-</p>
+<article class="blog-post">
+  <h2><a href="{{post.url}}">{{ post.data.title }}</a></h2>
+  <p class="post-meta">
+    Publié le {{ post.date | niceDate }}
+  </p>
+  {% if post.data.image %}
+  <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="blog-post-image">
+  {% endif %}
+  <p class="post-excerpt">
+    {% excerpt post %}
+  </p>
+  {% if post.data.tags %}
+  <p class="post-tags">
+    {% for tag in post.data.tags %}
+      <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </p>
+  {% endif %}
+</article>
 {% endfor %}
