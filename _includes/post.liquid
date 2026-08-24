@@ -6,30 +6,45 @@ navigationOptions:
 
 {{ collections.all | eleventyNavigation | eleventyNavigationToHtml: navigationOptions }}
 
-<article class="post-card blog-post">
-  <header class="post-header">
-    <div class="post-header-text">
+<div class="reading-progress-container">
+  <div class="reading-progress"></div>
+</div>
+
+<article class="post-card">
+  {% if image %}
+  <header class="post-hero" style="background-image: url('{{ image }}');">
+    <div class="post-hero-overlay"></div>
+    <div class="post-hero-content">
+      <p class="post-hero-meta">Publié le {{ date | niceDate }}</p>
       <h1>{{ title }}</h1>
-      <p class="post-meta">Publié le {{ date | niceDate }}</p>
       {% if tags %}
-        <footer class="post-footer">
-          <p class="post-tags">
-            {% for tag in tags %}
-              <span class="tag">{{ tag }}</span>
-            {% endfor %}
-          </p>
-        </footer>
+      <div class="post-hero-tags">
+        {% for tag in tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
       {% endif %}
     </div>
-
-    {% if image %}
-      <img src="{{ image }}" alt="{{ title }}" class="blog-post-image post-header-image">
-    {% endif %}
-
-    
   </header>
-  
+  {% else %}
+  <header class="post-hero post-hero-nofeatured">
+    <div class="post-hero-content">
+      <p class="post-hero-meta">Publié le {{ date | niceDate }}</p>
+      <h1>{{ title }}</h1>
+      {% if tags %}
+      <div class="post-hero-tags">
+        {% for tag in tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+  {% endif %}
+
   <div class="post-content">
     {{ content }}
   </div>
 </article>
+
+<a href="/blog/" class="back-to-blog">Retour au blog</a>

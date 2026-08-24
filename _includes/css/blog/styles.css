@@ -1,19 +1,264 @@
-/* === Blog Post Image Styles === */
-.blog-post-image {
+/* === Barre de progression de lecture === */
+.reading-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 1000;
+}
+
+.reading-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--pico-primary) 0%, var(--pico-primary-focus) 100%);
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--pico-primary) 40%, transparent);
+}
+
+/* === Typographie Article === */
+.post-content {
+  max-width: 65ch;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--pico-color);
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+  color: var(--pico-color);
+  opacity: 0.88;
+}
+
+.post-content h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 3rem 0 1.2rem;
+  padding-bottom: 0.6rem;
+  position: relative;
+  color: var(--pico-color);
+}
+
+.post-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--pico-primary);
+  border-radius: 2px;
+}
+
+.post-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1rem;
+  color: var(--pico-color);
+}
+
+.post-content strong {
+  color: var(--pico-color);
+  opacity: 1;
+}
+
+.post-content em {
+  color: var(--pico-color);
+  opacity: 0.8;
+}
+
+.post-content a {
+  color: var(--pico-primary);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--pico-primary) 30%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.post-content a:hover {
+  text-decoration-color: var(--pico-primary);
+}
+
+/* === Blockquotes === */
+.post-content blockquote {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  border-left: 4px solid var(--pico-primary);
+  background: color-mix(in srgb, var(--pico-primary) 5%, transparent);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--pico-color);
+  opacity: 0.85;
+}
+
+.post-content blockquote p {
+  margin-bottom: 0;
+}
+
+/* === Code Blocks === */
+.post-content pre {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.post-content code {
+  font-family: Consolas, Monaco, monospace;
+  font-size: 0.9em;
+}
+
+.post-content p code,
+.post-content li code {
+  background: color-mix(in srgb, var(--pico-primary) 8%, transparent);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: var(--pico-primary);
+}
+
+/* === Images dans le contenu === */
+.post-content img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin: 1.5rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 2rem 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.blog-post-image:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+.post-content img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* === Blog Post Tags === */
+/* === Listes === */
+.post-content ul,
+.post-content ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.post-content li::marker {
+  color: var(--pico-primary);
+}
+
+/* === Séparateurs décoratifs === */
+.post-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 3rem auto;
+  max-width: 200px;
+}
+
+.post-separator::before,
+.post-separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--pico-muted-border-color), transparent);
+}
+
+.post-separator span {
+  color: var(--pico-primary);
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* === Hero d'Article === */
+.post-hero {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 2.5rem;
+}
+
+.post-hero-nofeatured {
+  min-height: 280px;
+  background: linear-gradient(135deg, var(--pico-primary) 0%, var(--pico-primary-focus) 100%);
+}
+
+.post-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.post-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 75ch;
+  margin: 0 auto;
+}
+
+.post-hero-meta {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.post-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin: 0 0 1.2rem;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.post-hero-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.post-hero-tags .tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  margin: 0;
+}
+
+.post-hero-tags .tag:hover {
+  background: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+/* === Tags (dans le contenu / cartes) === */
 .post-tags {
   margin: 1rem 0;
 }
@@ -23,51 +268,289 @@
   background: var(--pico-primary-background);
   color: var(--pico-primary-inverse);
   padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.85rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tag:hover {
+  background: var(--pico-primary);
+  color: var(--pico-primary-inverse);
+}
+
+/* === Navigation Articles === */
+.post-navigation {
+  max-width: 65ch;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--pico-muted-border-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.post-nav-link {
+  text-decoration: none;
+  color: var(--pico-color);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--pico-muted-border-color);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.post-nav-link:hover {
+  border-color: var(--pico-primary);
+  background: color-mix(in srgb, var(--pico-primary) 3%, transparent);
+}
+
+.post-nav-link.next {
+  text-align: right;
+}
+
+.post-nav-label {
+  font-size: 0.8rem;
+  color: var(--pico-muted-color);
+  margin-bottom: 0.25rem;
+}
+
+.post-nav-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--pico-primary);
+}
+
+.post-nav-link.next .post-nav-label {
+  text-align: right;
+}
+
+.post-nav-link.next .post-nav-title {
+  text-align: right;
+}
+
+.post-nav-link[hidden] {
+  display: none;
+}
+
+/* === Bouton retour blog === */
+.back-to-blog {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+  color: var(--pico-muted-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.back-to-blog:hover {
+  color: var(--pico-primary);
+}
+
+.back-to-blog::before {
+  content: '←';
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.back-to-blog:hover::before {
+  transform: translateX(-3px);
+}
+
+/* === Page liste - Grille de cartes === */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* === Cartes d'article === */
+.blog-card {
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: var(--pico-primary);
+}
+
+.blog-card-image-wrapper {
+  display: block;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.blog-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-image {
+  transform: scale(1.06);
+}
+
+.blog-card-body {
+  padding: 1.5rem;
+}
+
+.blog-card-body .card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.blog-card-title a {
+  color: var(--pico-foreground);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-card-title a:hover {
+  color: var(--pico-primary);
+}
+
+.blog-card:hover .blog-card-title a {
+  color: var(--pico-primary);
+}
+
+.blog-card-meta {
+  color: var(--pico-muted-color);
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-card-excerpt {
+  color: var(--pico-color);
+  opacity: 0.7;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* === Sans image === */
+.blog-card.no-image .blog-card-body {
+  padding-top: 1.5rem;
+}
+
+/* === Titres de section blog === */
+.blog-page-title {
+  font-size: 2rem;
+  font-weight: 800;
   margin-bottom: 0.5rem;
 }
 
-/* === Blog Post Meta === */
-.post-meta {
+.blog-page-subtitle {
   color: var(--pico-muted-color);
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-}
-
-/* === Blog List Styles === */
-.blog-post {
+  font-size: 1rem;
   margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--pico-muted-border-color);
-}
-
-.blog-post:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 
 /* === Pagination === */
 .pagination {
   text-align: center;
-  margin: 2rem 0;
+  margin: 3rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .pagination a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin: 0 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
   border: 1px solid var(--pico-muted-border-color);
-  border-radius: 4px;
+  border-radius: 8px;
   text-decoration: none;
   color: var(--pico-color);
+  font-weight: 500;
+  font-size: 0.9rem;
   transition: all 0.2s ease;
 }
 
 .pagination a:hover {
-  background: var(--pico-primary-background);
-  color: var(--pico-primary-inverse);
+  background: color-mix(in srgb, var(--pico-primary) 8%, transparent);
   border-color: var(--pico-primary);
+  color: var(--pico-primary);
+}
+
+.pagination .separator {
+  color: var(--pico-muted-color);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .post-content {
+    max-width: 100%;
+  }
+
+  .post-hero {
+    min-height: 320px;
+  }
+
+  .post-hero-nofeatured {
+    min-height: 220px;
+  }
+
+  .post-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .post-hero-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .post-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-navigation {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .post-nav-link.next {
+    text-align: left;
+  }
+
+  .post-nav-link.next .post-nav-label,
+  .post-nav-link.next .post-nav-title {
+    text-align: left;
+  }
 }
