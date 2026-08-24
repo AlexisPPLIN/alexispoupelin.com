@@ -1,0 +1,35 @@
+---
+layout: layout.liquid
+navigationOptions:
+  includeSelf: true
+---
+
+{{ collections.all | eleventyNavigation | eleventyNavigationToHtml: navigationOptions }}
+
+<article class="post-card blog-post">
+  <header class="post-header">
+    <div class="post-header-text">
+      <h1>{{ title }}</h1>
+      <p class="post-meta">Publié le {{ date | niceDate }}</p>
+      {% if tags %}
+        <footer class="post-footer">
+          <p class="post-tags">
+            {% for tag in tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </p>
+        </footer>
+      {% endif %}
+    </div>
+
+    {% if image %}
+      <img src="{{ image }}" alt="{{ title }}" class="blog-post-image post-header-image">
+    {% endif %}
+
+    
+  </header>
+  
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>

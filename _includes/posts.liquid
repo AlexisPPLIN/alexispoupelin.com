@@ -12,11 +12,11 @@ navigationOptions:
   Publié le {{ date | niceDate }}
 </p>
 
-{% if page.data.image %}
-<img src="{{ page.data.image }}" alt="{{ title }}" class="blog-post-image">
-{% endif %}
-
 <div class="post-content">
+  {% if page.data.image %}
+    <img src="{{ page.data.image }}" alt="{{ title }}" class="blog-post-image">
+  {% endif %}
+  
   {{ content }}
 </div>
 
